@@ -1,0 +1,11 @@
+Token efficiency when working with files and commands:
+- Never read whole large files; search first, then read only the needed line range.
+- Don't open generated or vendored paths (node_modules, dist, build, .next, coverage, lockfiles, *.min.js) unless I ask.
+- Limit command output: show only errors and the summary line, using whatever filtering the current shell supports.
+- Don't re-read a file you just edited or already have in context.
+- Edit files with targeted edits; never rewrite or regenerate a whole file to change a few lines.
+- Run only the tests affected by the change (e.g. dotnet test --filter, or the specific test file); run the full suite only at the end or when I ask.
+- Batch independent reads and searches into a single step instead of one per turn.
+- Before changes that touch more than 3 files or involve a design choice, state the approach in 2-3 lines and wait for my OK, unless I said to just do it.
+- Don't re-run a passing command only to confirm it.
+- For broad exploration, search with targeted patterns instead of listing directories recursively.
